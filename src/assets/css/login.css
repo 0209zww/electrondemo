@@ -1,0 +1,115 @@
+/**
+取消全部的外边距和内边距
+ */
+ * {
+    padding: 0;
+    margin: 0;
+}
+ 
+/*设置窗口的样式*/
+.login {
+    cursor: default;
+    /*设置手型*/
+    /* border: 1px solid red; */
+    /*加一个边框 调试样式 最后要删除或者更改**/
+    width: 100vw;
+    /*设置宽度  必须要和主进程中设置的一样 不能大于主进程中设置的宽度 否则会出现滚动条*/
+    height: 100vh;
+    /*设置高度  必须要和主进程中设置的一样 不能大于主进程中设置的高度 否则会出现滚动条*/
+    position: relative;
+    /*设置为相对定位*/
+    /* border-radius: 4px; */
+    /*设置圆角*/
+    /* border: 1px solid #464545; */
+    /* 拖 */
+    -webkit-app-region: drag;
+    /* 禁止滚动条 */
+    overflow: hidden;
+}
+ 
+/**
+header的样式 header中只会有一个关闭按钮 处于右上角
+ */
+.login header.header {
+    position: absolute;
+    /*设置绝对定位 因为背景在他下面*/
+    height: 30px;
+    /*设置高度*/
+ 
+    /* border-radius: 20px 20px 0 0; */
+    /*给header的左上角 右上角设置圆角 不然会出现很尴尬的页面*/
+    width: 428px;
+    /* 因为设置了绝对定位 设置宽度*/
+ 
+    /* background: rgba(255, 255, 255, 0.2); */
+    /*暂时设置的 后面要删除或者更改*/
+    text-align: right;
+}
+ 
+/**
+背景
+ */
+.login main .bg {
+    height: 124px;
+    /*设置高度*/
+    width: 100%;
+    /*设置宽度 也可以不用设置 因为这个元素没有设置绝对定位 所以默认就是100%*/
+    /* border-radius: 4px 4px 0 0; */
+    /*给左上角 右上角设置圆角 不然会出现很尴尬的页面 这里和header重合在一起了*/
+    /* background: url("@/assets/images/login.gif") 10px; */
+    background-size: 100%;
+}
+ 
+/**
+放置表单的元素
+ */
+.login main .body {
+    /* width: 428px; */
+    /*设置宽度 也可以不用设置 因为这个元素没有设置绝对定位 所以默认就是100%*/
+    /* height: 200px; */
+    /*设置高度 这里的高度是 主窗口(326) - footer(30) - 背景(124) 因为header设置了绝对定位 所以不用关 */
+    /* background: green; */
+    /*暂时设置的 后面要删除或者更改*/
+}
+ 
+.login footer.footer {
+    position: absolute;
+    /* 设置绝对定位 要让他处于窗口的最底部*/
+    height: 30px;
+    /*设置高度 */
+    /* background: red; */
+    /*暂时设置的 后面要删除或者更改*/
+    bottom: 0;
+    /*让footer处于底部*/
+    width:93%;
+    /* 因为设置了绝对定位 设置宽度*/
+    /* border-radius: 0 0 5px 5px; */
+    background-color: #FFFFFF;
+}
+ 
+.login header.header span{
+    display: inline-block;
+    height: 30px;
+    width:30px;
+    text-align: center;
+    line-height: 30px;
+    color:#E4393c;
+    cursor: pointer;
+ 
+}
+.login header.header span:hover{
+    background-color: rgba(255,255,255,0.6);
+    cursor: pointer;
+}
+.zczh{
+    cursor: pointer;
+    color: #7c7a7a;
+    user-select: none;
+    -webkit-app-region: no-drag;
+}
+.zczh:hover{
+    cursor: pointer;
+    color: black;
+    user-select: none;
+    -webkit-app-region: no-drag;
+}
